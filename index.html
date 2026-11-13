@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agente de Tesis Doctoral</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #142b4a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.container {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+h2 {
+    color: #183b63;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 130px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+#resultado {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AGENTE DE TESIS DOCTORAL</h1>
+    <p>Asistente de investigación científica e inteligencia artificial</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Bienvenido, investigador</h2>
+        <p>Tu espacio de apoyo para desarrollar investigaciones doctorales con rigor científico.</p>
+    </div>
+
+    <div class="card">
+        <h2>Área de investigación</h2>
+
+        <select id="area">
+            <option>Administración y gestión empresarial</option>
+            <option>Economía y finanzas</option>
+            <option>Contabilidad y auditoría</option>
+            <option>Educación</option>
+            <option>Ingeniería y tecnología</option>
+            <option>Otras disciplinas</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h2>¿En qué necesitas ayuda?</h2>
+
+        <select id="tarea">
+            <option>Formulación del problema</option>
+            <option>Planteamiento de objetivos e hipótesis</option>
+            <option>Construcción del marco teórico</option>
+            <option>Antecedentes de investigación</option>
+            <option>Diseño metodológico</option>
+            <option>Análisis estadístico</option>
+            <option>Redacción académica APA 7</option>
+            <option>Revisión de tesis doctoral</option>
+        </select>
+
+        <textarea id="consulta"
+        placeholder="Describe tu investigación o escribe tu pregunta..."></textarea>
+
+        <button onclick="consultar()">
+            Preparar consulta
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>Resumen de tu solicitud</h2>
+        <div id="resultado">
+            Aquí aparecerá el resumen de tu consulta.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function consultar() {
+
+    const area = document.getElementById("area").value;
+    const tarea = document.getElementById("tarea").value;
+    const consulta = document.getElementById("consulta").value;
+
+    if (!consulta.trim()) {
+        alert("Por favor, escribe tu consulta.");
+        return;
+    }
+
+    document.getElementById("resultado").textContent =
+        "Área: " + area +
+        "\nActividad: " + tarea +
+        "\nConsulta: " + consulta +
+        "\n\nSolicitud preparada correctamente. El siguiente paso será conectar la inteligencia artificial.";
+}
+</script>
+
+</body>
+</html>
